@@ -1,4 +1,5 @@
 # Data Wrangling World Ocean and Historical Hurricane Data
+* ## Code can be found [here](https://github.com/chill7627/Predicting-Hurricane-Season-Impacts/blob/master/Hurricanes_Data_Wrangling.ipynb).
 ****
 ## National Oceanic and Atmospheric Administration World Ocean Database
 ### Background Information and File Selection  
@@ -48,7 +49,35 @@ After looking at the latitude and longitude data more closely, it was inconsiste
 
 Upon inspection, the data was mostly missing for the pH and pressure columns, so I chose to drop them from the dataframe.  Moreover, I filled NaN values by first filling NaNs by location averages.  Then, the remaining NaNs were filled by back filling.  
 
+![wod data histogram](https://user-images.githubusercontent.com/23604099/36941433-162e8176-1f29-11e8-8cdc-01042197e9b0.png)
+
 After performing EDA on the dataframe, I decided to leave the high data points in the dataframe as they seemed they could be real.  The following illustrate the overall data:
 
-[[C:/Users/sethh/OneDrive/Springboard/Capstone Project 1/wod data histogram]]
+![boxplots wod data](https://user-images.githubusercontent.com/23604099/36941472-012e9ba2-1f2a-11e8-9db3-f71236c21324.png)
+![line plots wod data](https://user-images.githubusercontent.com/23604099/36941476-0c368f50-1f2a-11e8-955c-8471e35ed4c7.png)
+
+****
+
+## Historical Hurricane Data
+### Background Information and File Selection  
+The Historical Hurricane Data lists the hurricanes per year,  their categories, and their landfall locations.  I found this data in wiki tables separated by state in the [List of United States Hurricanes](https://en.wikipedia.org/wiki/List_of_United_States_hurricanes) wiki page.  
+
+In order to wrangle the data into python, I had to scrape the wiki page's tables.  I used the [wikipedia package](https://pypi.python.org/pypi/wikipedia).  Below is an example of a dataframe straight from the wiki table:
+
+<img width="760" alt="sample raw wiki table" src="https://user-images.githubusercontent.com/23604099/36947617-b9c71e2e-1f9c-11e8-8c30-022f90e0aa77.PNG">
+
+The tables from the wiki page have several issues that need to be cleaned up.  First I fixed the fact the tables were set up in a split column fashion.  I had to put the data into one long dataframe.  Also, the date was split into two columns.  I fixed this by using datetime.strptime() method.  In addition, I removed any blank rows that existed in the dataframes.  The result is below: 
+
+<img width="368" alt="post datetime and concat hurricane data" src="https://user-images.githubusercontent.com/23604099/36947997-ed6d0f36-1fa1-11e8-8568-52fe0d232b13.PNG">
+
+Next steps included:
+* Removing any special [notes] in the category column.
+* Renaming the remaining columns.
+* Replacing special entries in quotations in the named column with "Unnamed".
+* Adding a corresponding state label for each dataframe entry.
+* Removing any entries pre-dating 1960 from the dataframe.
+
+The result is below:
+
+<img width="283" alt="final hurricane df" src="https://user-images.githubusercontent.com/23604099/37010989-15f23f7e-20bc-11e8-8c18-3d3e6a8ec072.PNG">
 
