@@ -1,0 +1,15 @@
+In exploring the datasets created in the Data Wrangling step, I wanted to look into answering two main questions.
+* Are there any factors of the ocean properties that trend well with the frequency of hurricanes?
+* If so, what are they and how strong of an influence do they seem to have?
+Moreover, I wanted to get a feel for the impacts that hurricanes have had over the years on the Gulf Coast of the United States.  This includes frequency, strength, and strength frequency for both the Gulf Coast as a whole and per state.
+I feel the best way to illustrate the initial analysis results is in a Q and A format.
+#### Q: How often and how many hurricanes impact the Gulf Coast of the United States?
+#### A: A trend of 0-3 hurricanes per year is pretty steady throughout history with a few outlying years, most notably 2005 with 11 hurricane impacts along the gulf coast.  Zero hurricanes is the most seen amount throughout history. 90% of the years had 3 hurricanes or less with most years having 0 or 1 hurricane per year.
+<img width="608" alt="hurricanes per year over time" src="https://user-images.githubusercontent.com/23604099/38057950-1c57f62e-32af-11e8-97ae-19672a6378ae.PNG">
+<img width="553" alt="frequency of hurricane occurences per year" src="https://user-images.githubusercontent.com/23604099/38058000-4e885300-32af-11e8-8a53-886ecd1f10c0.PNG">
+<img width="561" alt="cdf hurricanes per year" src="https://user-images.githubusercontent.com/23604099/38058034-6e2fee0c-32af-11e8-81fa-ea6330a7d25f.PNG">
+***
+#### Q: How strong are the hurricanes that impact the United States Gulf Coast, and with what frequency do the respective strengths impact the US Gulf Coast?  Hurricanes or ranked by a Category system from 1 to 5.  Category 1 is the weakest, and Category 5 is the strongest.
+#### A: After reviewing the category data, it shows that the most frequent category is Category 1 and the least frequent is Category 5. Moreover, the most frequent occurence is for the Gulf Coast to have 1 Category 1 hurricane per year.
+<img width="558" alt="frequency of categories per year" src="https://user-images.githubusercontent.com/23604099/38058464-ebd5b6b0-32b0-11e8-9bc4-da7db2552441.PNG">
+<img width="343" alt="frequency of category occurences per year" src="https://user-images.githubusercontent.com/23604099/38058656-a09557f4-32b1-11e8-8e9d-ee63d0f528cf.PNG">
