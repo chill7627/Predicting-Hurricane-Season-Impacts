@@ -53,7 +53,7 @@ Upon the above simple initial questions, the data was seeming to show that certa
 
 #### Q: What trend or impact does coast length have on number of hurricane impacts per year?
 #### A: After looking into hurricane counts vs. coast length for each state it seems that their is a positive correlation between the two quantities. This suggest that states with larger coast lines tend to be hit more often than states with smaller coast lines. This may just be circumstantial to other factors such as sea temperature, sea floor depth, etc. along those coast lines.
-<img width="565" alt="coast length vs hurricanes" src="https://user-images.githubusercontent.com/23604099/38064721-9ff90cac-32cd-11e8-8c14-66af686fec23.PNG">
+<img width="566" alt="coast length vs hurricanes" src="https://user-images.githubusercontent.com/23604099/38143248-a4f37fd0-340d-11e8-8012-79d02c56344e.PNG">
 
 
 
