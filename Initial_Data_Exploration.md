@@ -19,7 +19,23 @@ I feel the best way to illustrate the initial analysis results is in a Q and A f
 Now, I will look at the ocean data of the Gulf of Mexico averaged as a whole.  I will investigate whether there are any correlations between the ocean properties and the number of hurricanes that impacted the gulf coast.  Also, I will look into the correlations between ocean features and average strengths of the storms.
 
 #### Q: What are the trends in the main gulf features over time (temperature, oxygen, phosphates, salinity, and silicates)?
-#### A: 
+#### A: It seems that most of the features have remained relatively steady besides temperature. There have been upsets in all the factors. Most interesting is that the average temperature for the gulf was much lower the year of 2005, the year of 11 hurricanes impact.  Dips in the temperature can be observed for every significant peak in the number of hurricanes.  All the features have low correlations with the ocean data with temperature being the strongest.
+
+* Below are line plots of the features averaged over the entire Gulf of Mexico per year vs. the hurricanes per year.
+
+<img width="490" alt="gulf of mexico oxygen line" src="https://user-images.githubusercontent.com/23604099/38120786-f2a1ad4e-3398-11e8-8080-3bf298a5fe7a.PNG">
+<img width="445" alt="gulf of mexico phosphate line" src="https://user-images.githubusercontent.com/23604099/38120798-184929b4-3399-11e8-8aa3-6e9e6fc47204.PNG">
+<img width="450" alt="gulf of mexico salinity line" src="https://user-images.githubusercontent.com/23604099/38120831-4959b26c-3399-11e8-942c-ff53c22c4616.PNG">
+<img width="434" alt="gulf of mexico silicate line" src="https://user-images.githubusercontent.com/23604099/38120843-646c3ca0-3399-11e8-9130-e79b3447b8fd.PNG">
+<img width="453" alt="gulf of mexico temp line" src="https://user-images.githubusercontent.com/23604099/38120870-888a5c5c-3399-11e8-83dc-578949303d3e.PNG">
+
+* Next are the scatter plots and Pearson correlation coefficients for each ocean feature and the number of hurricanes per year.
+
+<img width="468" alt="oxy hurricane gulf of mexico scatter" src="https://user-images.githubusercontent.com/23604099/38120915-f27abee0-3399-11e8-9dae-7f4c56830684.PNG">
+
+****
+
+After looking at the gulf of Mexico as a whole, I thought it would be worthwhile to look into the breakdowns by state.
 
 #### Q: Which states are impacted most and least often by hurricanes?
 #### A: After review of cursory hurricanes by state data, it seems Florida and Louisiana are impacted the most with Alabama and Mississippi impacted the least. Florida is impacted by higher strength storms compared to the rest of the states, which are mostly affected by category 1 storms.
