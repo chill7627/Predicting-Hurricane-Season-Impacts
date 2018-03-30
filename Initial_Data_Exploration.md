@@ -32,6 +32,10 @@ Now, I will look at the ocean data of the Gulf of Mexico averaged as a whole.  I
 * Next are the scatter plots and Pearson correlation coefficients for each ocean feature and the number of hurricanes per year.
 
 <img width="468" alt="oxy hurricane gulf of mexico scatter" src="https://user-images.githubusercontent.com/23604099/38120915-f27abee0-3399-11e8-9dae-7f4c56830684.PNG">
+<img width="492" alt="scatter plot phosphate hurricanes gulf" src="https://user-images.githubusercontent.com/23604099/38142849-ff8d067a-340b-11e8-8e25-a8f683601f80.PNG">
+<img width="503" alt="scatter salinity hurricanes gulf" src="https://user-images.githubusercontent.com/23604099/38142912-338f5766-340c-11e8-8add-cc984a9760bf.PNG">
+<img width="493" alt="scatter silicate hurr gulf" src="https://user-images.githubusercontent.com/23604099/38142945-5634933a-340c-11e8-95a3-edf28b1a7878.PNG">
+<img width="506" alt="scatter temp hurr gulf" src="https://user-images.githubusercontent.com/23604099/38142971-71e91754-340c-11e8-9935-84586ae1cda8.PNG">
 
 ****
 
