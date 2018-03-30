@@ -22,16 +22,17 @@ Now, I will look at the ocean data of the Gulf of Mexico averaged as a whole.  I
 #### A: It seems that most of the features have remained relatively steady besides temperature. There have been upsets in all the factors. Most interesting is that the average temperature for the gulf was much lower the year of 2005, the year of 11 hurricanes impact.  Dips in the temperature can be observed for every significant peak in the number of hurricanes.  All the features have low correlations with the ocean data with temperature being the strongest.  Also, there is a fair amount of positive correlation between salinity and temperature, and silicates and oxygen. There seems to also be some negative correlation between silicates and temperature and salinity and oxygen, and phosphates and salinity.
 
 * Below are line plots of the features averaged over the entire Gulf of Mexico per year vs. the hurricanes per year.
-
 <img width="468" alt="ocean_params_time" src="https://user-images.githubusercontent.com/23604099/38146476-28fe6f66-341c-11e8-9f37-52a28a5c4e3d.png">
 
-* Next are the scatter plots and Pearson correlation coefficients for each ocean feature and the number of hurricanes per year.
+* Next are Pearson correlation coefficients for each ocean feature and the number of hurricanes per year.
 
-<img width="468" alt="oxy hurricane gulf of mexico scatter" src="https://user-images.githubusercontent.com/23604099/38120915-f27abee0-3399-11e8-9dae-7f4c56830684.PNG">
-<img width="492" alt="scatter plot phosphate hurricanes gulf" src="https://user-images.githubusercontent.com/23604099/38142849-ff8d067a-340b-11e8-8e25-a8f683601f80.PNG">
-<img width="503" alt="scatter salinity hurricanes gulf" src="https://user-images.githubusercontent.com/23604099/38142912-338f5766-340c-11e8-8add-cc984a9760bf.PNG">
-<img width="493" alt="scatter silicate hurr gulf" src="https://user-images.githubusercontent.com/23604099/38142945-5634933a-340c-11e8-95a3-edf28b1a7878.PNG">
-<img width="506" alt="scatter temp hurr gulf" src="https://user-images.githubusercontent.com/23604099/38142971-71e91754-340c-11e8-9935-84586ae1cda8.PNG">
+|Ocean Parameters|Correlations with Number of Hurricanes per Year|
+|----------------|-----------------------------------------------|
+|Oxygen|-0.139101|
+|Phosphate|0.161184|
+|Salinity|-0.214846|
+|Silicate|0.122182|
+|Temperature|-0.362684|
 
 * Next I looked to see if there were any correlations between the ocean parameters.
 <img width="294" alt="wod param corr" src="https://user-images.githubusercontent.com/23604099/38143368-3238b7b6-340e-11e8-8e32-0c54302091fc.PNG">
