@@ -58,6 +58,21 @@ Upon the above simple initial questions, the data was seeming to show that certa
 
 #### Q: How do the ocean properties and hurricane impacts change over time by location? Broken down by state.
 #### A: 
-* #### After looking at the trends visually it seems the correlations are similar to the whole gulf averaged data above.
+* #### After looking at the trends visually it seems the correlations are similar to the whole gulf averaged data above with the strongest correlation being between the temperature and the number of hurricanes.
 ![alabama_ocean_params_time](https://user-images.githubusercontent.com/23604099/38427999-b7f12b34-3988-11e8-85da-99c816a5b0da.png) 
+![florida_ocean_params_time](https://user-images.githubusercontent.com/23604099/38428159-191f6524-3989-11e8-80ec-c13fe06e6720.png)
+![louisiana_ocean_params_time](https://user-images.githubusercontent.com/23604099/38428189-31d7baf8-3989-11e8-8a74-07bd7841b65b.png)
+![mississippi_ocean_params_time](https://user-images.githubusercontent.com/23604099/38428223-456c1780-3989-11e8-8fcb-4959b91f01a8.png)
+![texas_ocean_params_time](https://user-images.githubusercontent.com/23604099/38428238-532fef4a-3989-11e8-8c97-e444709d8643.png)
 
+* #### Looking at the heatmaps of the parameters by year and the hurricane counts per year does indeed seem to visually show that there is some correlation between the wod data and the number of hurricanes per year. Mainly a negative correlation between temperature and the number of hurricanes per year.
+
+Below is an example of the interact setup for the heatmaps that can be found in the [initial data story telling ipynb file](https://github.com/chill7627/Predicting-Hurricane-Season-Impacts/blob/master/Hurricanes_Data_Story_Telling.ipynb).  It is in the last cell of the file.
+
+<img width="463" alt="interact heatmap 2005 temp" src="https://user-images.githubusercontent.com/23604099/38428698-69ac7cba-398a-11e8-8276-a48254d6e34f.PNG">
+<img width="400" alt="interact bar plot temp 2005" src="https://user-images.githubusercontent.com/23604099/38428718-78b210b2-398a-11e8-9038-cfe114f686b7.PNG">
+
+****
+
+### Summary
+The number of hurricanes that affect the Gulf Coast of the United States each year is normally 3 or less.  The intensities of these storms are usually of the weakest variety being category 2 or less.  On a state by state basis, Florida and Louisiana get impacted the most often with Alabama and Mississippi being the least impacted.  There initially seems to be some correlation between the ocean parameters and the number of hurricanes that impact the gulf coast.  Most notably would be a negative correlation between the temperature and the number of hurricanes that impact the gulf coast.  The strongest correlation that initially explored is a strong positive correlation between the length of each states gulf coast, and the historical number of hurricanes that impacted the that state.  This makes sense if you think of it as a bucket catching rain drops.  A bigger bucket will stastically fill up faster.  
