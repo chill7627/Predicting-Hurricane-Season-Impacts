@@ -22,7 +22,6 @@ The federal, state, and local governments, especially those along the Gulf Coast
 ### DATA
 
 #### Data Wrangling World Ocean and Historical Hurricane Data
-* Code can be found [here](https://github.com/chill7627/Predicting-Hurricane-Season-Impacts/blob/master/Hurricanes_Data_Wrangling.ipynb).
 
 **1. National Oceanic and Atmospheric Administration World Ocean Database**
 
@@ -110,4 +109,81 @@ The result is below:
 
 <img width="283" alt="final hurricane df" src="https://user-images.githubusercontent.com/23604099/37010989-15f23f7e-20bc-11e8-8c18-3d3e6a8ec072.PNG">
 
+**3. Additional Datasets**
 
+Additional data could be incorporated for a more inclusive picture of the Gulf of Mexico.  By utilizing the other data probes in the World Ocean Database, a more filled dataset for gulf features could be created.  In addition, more of the World Ocean Database data could be used to gather information on how a larger area of the earth's oceans impact hurricanes and tropical weather worldwide.
+
+Moreover, damage and casualty information could be gathered in an effort to predict damage amounts for upcoming seasons.
+
+****
+
+### INITIAL DATA EXPLORATION
+
+**Questions**
+
+In exploring the datasets created in the Data Wrangling step, I wanted to look into answering two main questions.
+1. I wanted to get a feel for the impacts that hurricanes have had over the years on the Gulf Coast of the United States.  This includes frequency, strength, and strength frequency for both the Gulf Coast as a whole and per state.
+2. Are there any factors of the ocean properties that trend well with the frequency of hurricanes?
+3. Take a look into the data broken down by state.
+
+**Answers**
+
+* **1. Hurricane Impacts**
+
+* A trend of 0-3 hurricanes per year is pretty steady throughout history with a few outlying years, most notably 2005 with 11 hurricane impacts along the gulf coast.  Zero hurricanes is the most seen amount throughout history. 90% of the years had 3 hurricanes or less with most years having 0 or 1 hurricanes per year.
+<img width="608" alt="hurricanes per year over time" src="https://user-images.githubusercontent.com/23604099/38057950-1c57f62e-32af-11e8-97ae-19672a6378ae.PNG">
+<img width="553" alt="frequency of hurricane occurences per year" src="https://user-images.githubusercontent.com/23604099/38058000-4e885300-32af-11e8-8a53-886ecd1f10c0.PNG">
+<img width="561" alt="cdf hurricanes per year" src="https://user-images.githubusercontent.com/23604099/38058034-6e2fee0c-32af-11e8-81fa-ea6330a7d25f.PNG">
+
+* After reviewing the category data, it shows that the most frequent category is Category 1 and the least frequent is Category 5. Moreover, the most frequent occurence is for the Gulf Coast to have 1 Category 1 hurricane per year.  Hurricanes are ranked in strength with the weakest being Category 1  and the strongest being Category 5.
+<img width="558" alt="frequency of categories per year" src="https://user-images.githubusercontent.com/23604099/38058464-ebd5b6b0-32b0-11e8-9bc4-da7db2552441.PNG">
+<img width="343" alt="frequency of category occurences per year" src="https://user-images.githubusercontent.com/23604099/38058656-a09557f4-32b1-11e8-8e9d-ee63d0f528cf.PNG">
+
+* **2. Ocean Properties and Hurricane Impacts Trends**
+
+I looked at the ocean data of the Gulf of Mexico averaged as a whole.  I investigated whether there are any correlations between the ocean properties and the number of hurricanes that impacted the gulf coast.  Also, I looked into the correlations between ocean features and average strengths of the storms.
+
+
+* A time series analysis of ocean features revealed that most of the features have remained relatively steady besides temperature. There have been upsets in all the factors. Most interesting was that the average temperature for the gulf was much lower the year of 2005, the year of 11 hurricane impacts.  Dips in the temperature can be observed for every significant peak in the number of hurricanes.  All the features have low correlations with the ocean data with temperature being the strongest.  Also, there is a fair amount of positive correlation between salinity and temperature, and silicates and oxygen. There seems to also be some negative correlation between silicates and temperature and salinity and oxygen, and phosphates and salinity.
+
+* Below are line plots of the features averaged over the entire Gulf of Mexico per year vs. the hurricanes per year.
+<img width="468" alt="ocean_params_time" src="https://user-images.githubusercontent.com/23604099/38146476-28fe6f66-341c-11e8-9f37-52a28a5c4e3d.png">
+
+* Next are Pearson correlation coefficients for each ocean feature and the number of hurricanes per year.
+
+|Ocean Parameters|Correlations with Number of Hurricanes per Year|
+|----------------|-----------------------------------------------|
+|Oxygen|-0.139101|
+|Phosphate|0.161184|
+|Salinity|-0.214846|
+|Silicate|0.122182|
+|Temperature|-0.362684|
+
+* **3. Data Analyzed by State**
+
+After looking at the gulf of Mexico as a whole, I thought it would be worthwhile to look into the breakdowns by state.
+
+* After review of cursory hurricanes by state data, Florida and Louisiana are impacted the most with Alabama and Mississippi impacted the least. Florida is impacted by higher strength storms compared to the rest of the states, which are mostly affected by category 1 storms.  Moreover, the highest likelihood is to be impacted by 0 or 1 storms per year.
+<img width="573" alt="hurricane state count" src="https://user-images.githubusercontent.com/23604099/38064628-fe578c8e-32cc-11e8-8443-92d3ea32feb5.PNG">
+<img width="433" alt="categories by state" src="https://user-images.githubusercontent.com/23604099/38064675-4c6a6612-32cd-11e8-93e2-710679244217.PNG">
+<img width="557" alt="hurricanes per year by state" src="https://user-images.githubusercontent.com/23604099/38144432-aed1b350-3412-11e8-99bb-3cd8ccfc20ed.PNG">
+
+
+* Upon the above simple initial questions, the data was seeming to show that certain states were always being impacted more frequent and with stronger storms.  I decided to dig in deeper into different features of the states to see if they showed any interesting trends and or correlations.
+
+* After looking into hurricane counts vs. coast length for each state it seems that there is a positive correlation between the two quantities. This suggest that states with larger coast lines tend to be impacted more often than states with smaller coast lines. This may just be circumstantial to other factors such as sea temperature, sea floor depth, etc. along those coast lines.
+<img width="566" alt="coast length vs hurricanes" src="https://user-images.githubusercontent.com/23604099/38143248-a4f37fd0-340d-11e8-8012-79d02c56344e.PNG">
+
+* The heatmaps of the parameters by year and the hurricane counts per year seems to visually show that there is some correlation between the wod data and the number of hurricanes per year. Mainly a negative correlation between temperature and the number of hurricanes per year.
+
+<img width="463" alt="interact heatmap 2005 temp" src="https://user-images.githubusercontent.com/23604099/38428698-69ac7cba-398a-11e8-8276-a48254d6e34f.PNG">
+<img width="400" alt="interact bar plot temp 2005" src="https://user-images.githubusercontent.com/23604099/38428718-78b210b2-398a-11e8-9038-cfe114f686b7.PNG">
+
+<img width="444" alt="interact heatmap 2007 temp" src="https://user-images.githubusercontent.com/23604099/38959214-c7ae02a0-432d-11e8-81d6-f152019af9ad.PNG">
+<img width="372" alt="interact bar plot temp 2007" src="https://user-images.githubusercontent.com/23604099/38959224-cce8b58a-432d-11e8-929e-db3e12327572.PNG">
+
+**Initial Data Exploration Summary**
+
+The number of hurricanes that affect the Gulf Coast of the United States each year is normally 3 or less.  The intensities of these storms are usually of the weakest variety being category 2 or less.  On a state by state basis, Florida and Louisiana get impacted the most often with Alabama and Mississippi being the least impacted.  There initially seems to be some correlation between the ocean parameters and the number of hurricanes that impact the gulf coast.  Most notably would be a negative correlation between the temperature and the number of hurricanes that impact the gulf coast.  The strongest correlation that initially explored is a strong positive correlation between the length of each states gulf coast, and the historical number of hurricanes that impacted the that state.  This makes sense if you think of it as a bucket catching rain drops.  A bigger bucket will stastically fill up faster. 
+
+****
