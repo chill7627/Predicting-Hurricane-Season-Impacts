@@ -200,17 +200,17 @@ After the initial exploratory data analysis, some correlations and relations amo
 
 **1. Correlation of number of hurricanes to any of the World Ocean Database features**
 
-* **Test Setup**
+**Test Setup**
 
 I chose to use hacker statistics as they are more widely applicable and can benefit from numerous simulated samples.  With hacker statistics if you can think of test, hacker statistics can test it.  Below are the steps used in this test:
 
- * Null hypothesis is that the data aren't correlated.
- * Create permutation replicates of the wod feature data while holding the hurricane data constant.
- * Test statistic is the correlation coefficient.
- * p-value is the sum of the correlations at least as extreme as the empirical correlation.
- * alpha = 0.05 significance level.
+   * Null hypothesis is that the data aren't correlated.
+   * Create permutation replicates of the wod feature data while holding the hurricane data constant.
+   * Test statistic is the correlation coefficient.
+   * p-value is the sum of the correlations at least as extreme as the empirical correlation.
+   * alpha = 0.05 significance level.
 
-* **Results**
+**Results**
 
 |WOD Feature|Empirical Correlation|p-value|Significant Result|
 |-----------|---------------------|-------|------------------|
@@ -224,17 +224,17 @@ The only statistically significant correlation with $\alpha$ = .05 significance 
 
 **2. Correlation of average yearly strength of hurricanes to any of the World Ocean Database features**
 
-* **Test Setup**
+**Test Setup**
 
 I chose to use hacker statistics as they are more widely applicable and can benefit from numerous simulated samples.  With hacker statistics if you can think of test, hacker statistics can test it.  Below are the steps used in this test:
 
- * Null hypothesis is that the data aren't correlated.
- * Create permutation replicates of the wod feature data while holding the strength data constant.
- * Test statistic is the correlation coefficient.
- * p-value is the sum of the correlations at least as extreme as the empirical correlation.
- * alpha = 0.05 significance level.
+   * Null hypothesis is that the data aren't correlated.
+   * Create permutation replicates of the wod feature data while holding the strength data constant.
+   * Test statistic is the correlation coefficient.
+   * p-value is the sum of the correlations at least as extreme as the empirical correlation.
+   * alpha = 0.05 significance level.
 
-* **Results**
+**Results**
 
 |WOD Feature|Empirical Correlation|p-value|Significant Result|
 |-----------|---------------------|-------|------------------|
@@ -248,17 +248,17 @@ The only statistically significant correlation with alpha = .05 significance lev
 
 **3. Coast length correlates with overall number of hurricanes per state.**
 
-* **Test Setup**
+**Test Setup**
 
 I chose to use hacker statistics as they are more widely applicable and can benefit from numerous simulated samples.  With hacker statistics if you can think of test, hacker statistics can test it.  Below are the steps used in this test:
 
- * Null hypothesis is that the data aren't correlated.
- * Create permutation replicates of the coast length data while holding the number of hurricanes data constant.
- * Test statistic is the correlation coefficient.
- * p-value is the sum of the correlations at least as extreme as the empirical correlation.
- * alpha = 0.05 significance level.
+   * Null hypothesis is that the data aren't correlated.
+   * Create permutation replicates of the coast length data while holding the number of hurricanes data constant.
+   * Test statistic is the correlation coefficient.
+   * p-value is the sum of the correlations at least as extreme as the empirical correlation.
+   * alpha = 0.05 significance level.
 
-* **Results**
+**Results**
 
 |Empirical Correlation|p-value|Significant Result|
 |---------------------|-------|------------------|
@@ -275,19 +275,19 @@ The result is statistically significant with alpha = .05 significance level.  Mo
 
 **A. Colder yearly average ocean temperatures lead to higher number of hurricanes**
 
-* **Test Setup**
+**Test Setup**
 
 I chose to use hacker statistics as they are more widely applicable and can benefit from numerous simulated samples.  With hacker statistics if you can think of test, hacker statistics can test it.  Below are the steps used in this test:
 
- * Try different group splitting temperature.
- * Null hypothesis is that there isn't a difference in means of the two groups.
- * Shift high and low temperature data groups to have the same mean.
- * Create bootstrap replicates of both groups.
- * The test statistic is difference of means (low temperature mean - high temperature mean).
- * p-value is the sum of the replicates that have a difference of means at least as extreme as the empirical difference of means.
- * alpha = 0.05 significance level.
+   * Try different group splitting temperature.
+   * Null hypothesis is that there isn't a difference in means of the two groups.
+   * Shift high and low temperature data groups to have the same mean.
+   * Create bootstrap replicates of both groups.
+   * The test statistic is difference of means (low temperature mean - high temperature mean).
+   * p-value is the sum of the replicates that have a difference of means at least as extreme as the empirical difference of means.
+   * alpha = 0.05 significance level.
 
-* **Results**
+**Results**
 
 |Divide Temperature|Empirical Difference of Means|p-value|Significant Result|Lowest Group Size|
 |------------------|-----------------------------|-------|------------------|-----------------|
@@ -321,19 +321,19 @@ A good dividing temperature that would signify a statistically higher chance of 
 
 **B. Lower yearly average ocean oxygen content leads to higher average yearly strength of hurricanes**
 
-* **Test Setup**
+**Test Setup**
 
 I chose to use hacker statistics as they are more widely applicable and can benefit from numerous simulated samples.  With hacker statistics if you can think of test, hacker statistics can test it.  Below are the steps used in this test:
 
- * Try different group splitting oxygen content values.
- * Null hypothesis is that there isn't a difference in means of the two groups.
- * Shift high and low oxygen content data groups to have the same mean.
- * Create bootstrap replicates of both groups.
- * The test statistic is difference of means(low content mean minus high content mean).
- * p-value is the sum of the replicates that have a difference of means at least as extreme as the empirical difference of means.
- * alpha = 0.05 significance level.
+   * Try different group splitting oxygen content values.
+   * Null hypothesis is that there isn't a difference in means of the two groups.
+   * Shift high and low oxygen content data groups to have the same mean.
+   * Create bootstrap replicates of both groups.
+   * The test statistic is difference of means(low content mean minus high content mean).
+   * p-value is the sum of the replicates that have a difference of means at least as extreme as the empirical difference of means.
+   * alpha = 0.05 significance level.
 
-* **Results**
+**Results**
 
 |Divide Oxygen Content|Empirical Difference of Means|p-value|Significant Result|Lowest Group Size|
 |------------------|-----------------------------|-------|------------------|-----------------|
@@ -358,14 +358,15 @@ However the data may not exactly meet the conditions of the t-test, so the resul
 However, a significant negative correlation does exist between the yearly average oxygen content of the gulf and the average strength of the hurricanes.
 
 #### Statistical Testing Summary
-There is a significant negative correlation between the yearly average gulf temperature and the yearly number of hurricanes affecting the gulf coast.
 
-Also, there is a significant negative correlation between the yearly average oxygen content of the gulf and the yearly average strength of the hurricanes that affect the gulf coast.
+* There is a significant negative correlation between the yearly average gulf temperature and the yearly number of hurricanes affecting the gulf coast.
 
-Moreover, the coast length of each state is a huge determining factor in the number of hurricanes that will hit particular states in a year.
+* Also, there is a significant negative correlation between the yearly average oxygen content of the gulf and the yearly average strength of the hurricanes that affect the gulf coast.
 
-No significant dividing temperature or oxygen content could be found with available data to give a boundary for higher chance of hurricanes and/or higher strengths for the year.
+* Moreover, the coast length of each state is a huge determining factor in the number of hurricanes that will hit particular states in a year.
 
-More data is needed to provide a larger sample size and more statistical power.
+* No significant dividing temperature or oxygen content could be found with available data to give a boundary for higher chance of hurricanes and/or higher strengths for the year.
+
+* More data is needed to provide a larger sample size and more statistical power.
 
 
