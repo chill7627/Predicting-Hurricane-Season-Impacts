@@ -80,7 +80,7 @@ After looking at the latitude and longitude data more closely, it was inconsiste
 
 Upon inspection, the data was mostly missing for the pH and pressure columns, so I chose to drop them from the dataframe.  Moreover, I filled NaN values by first filling NaNs by location averages.  Then, the remaining NaNs were filled by back filling.  Below in *Figure 2* is the head of the created dataframe.  After these wrangling steps I did some EDA into how many data points there were per location in the dataframe just created.  The summary graph of this information is shown in *Figure 3* below:
 
-
+<img width="388" alt="wod_loc_df_head" src="https://user-images.githubusercontent.com/23604099/39396940-1fffed6c-4ac5-11e8-90df-7e97b491adc7.PNG">
 
 *Figure2: Head of the resulting wrangled dataframe indexed by location and date.*
 
@@ -106,15 +106,17 @@ After performing EDA on the individual features of the dataframe, I decided to l
     
 The Historical Hurricane Data lists the hurricanes per year,  their categories, and their landfall locations.  I found this data in wiki tables separated by state in the [List of United States Hurricanes](https://en.wikipedia.org/wiki/List_of_United_States_hurricanes) wiki page.  
 
-In order to wrangle the data into python, I had to scrape the wiki page's tables.  I used the [wikipedia package](https://pypi.python.org/pypi/wikipedia).  Below in *Figure 5* is an example of a dataframe straight from the wiki table:
+In order to wrangle the data into python, I had to scrape the wiki page's tables.  I used the [wikipedia package](https://pypi.python.org/pypi/wikipedia).  Below in *Figure 6* is an example of a dataframe straight from the wiki table:
 
 <img width="760" alt="sample raw wiki table" src="https://user-images.githubusercontent.com/23604099/36947617-b9c71e2e-1f9c-11e8-8c30-022f90e0aa77.PNG">
 
-*Figure 5: 
+*Figure 6: Sample of the raw dataframes scraped from the wiki tables.* 
 
-The tables from the wiki page have several issues that need to be cleaned up.  First I fixed the fact the tables were set up in a split column fashion.  I had to put the data into one long dataframe.  Also, the date was split into two columns.  I fixed this by using datetime.strptime() method.  In addition, I removed any blank rows that existed in the dataframes.  The result is below: 
+The tables from the wiki page have several issues that need to be cleaned up.  First I fixed the fact the tables were set up in a split table fashion.  I had to put the data into one long dataframe.  Also, the date was split into two columns.  I fixed this by using datetime.strptime() method, which parsed the dates in the separate columns.  In addition, I removed any blank rows that existed in the dataframes.  The result is below in *Figure 7*: 
 
 <img width="368" alt="post datetime and concat hurricane data" src="https://user-images.githubusercontent.com/23604099/36947997-ed6d0f36-1fa1-11e8-8568-52fe0d232b13.PNG">
+
+*Figure 7: Resulting dataframe after first wrangling steps outlined above.*
 
 Next steps included:
 * Removing any special [notes] in the category column.
@@ -123,13 +125,27 @@ Next steps included:
 * Adding a corresponding state label for each dataframe entry.
 * Removing any entries pre-dating 1960 from the dataframe.
 
-The result is below:
+The result is below in *Figure 8*:
 
 <img width="283" alt="final hurricane df" src="https://user-images.githubusercontent.com/23604099/37010989-15f23f7e-20bc-11e8-8c18-3d3e6a8ec072.PNG">
+
+*Figure 8: The final wrangled dataframe containing the historical list of hurricanes to impact the United States Gulf Coast.*
 
 **3. Additional Datasets**
 
 Additional data could be incorporated for a more inclusive picture of the Gulf of Mexico.  By utilizing the other data probes in the World Ocean Database, a more filled dataset for gulf features could be created.  In addition, more of the World Ocean Database data could be used to gather information on how a larger area of the earth's oceans impact hurricanes and tropical weather worldwide.
+
+More data could be taken from more global weather patterns such as the ones utilized by NOAA to predict hurricane activity (landfalls are not predicted) for upcoming seasons.  These are outlined below:
+
+1. The conducive conditions which were predicted in May for the Atlantic hurricane Main Development Region (MDR, which includes the tropical Atlantic and Caribbean Sea) are now present and are expected to persist through the peak months (August-October, ASO) of the hurricane season. These conditions include weaker vertical wind shear, weaker trade winds, more conducive wind patterns coming off of Africa, and a stronger west African monsoon.
+
+2. There is much higher confidence that ENSO-neutral conditions will persist through ASO, and that El Niño will not develop and suppress the season. 
+
+3. Warmer sea surface temperatures (SSTs) in the MDR are more likely to persist than key models had previously predicted.
+
+4. All models now predict a more active season than they did in May.
+
+5. Enhanced June-July activity in the tropical Atlantic (tropical storms Bret and Don) reinforces the expectation for an above-normal season. Historically, years with early-season activity in this region have a higher likelihood of being above-normal.
 
 Moreover, damage and casualty information could be gathered in an effort to predict damage amounts for upcoming seasons.
 
@@ -139,7 +155,7 @@ Moreover, damage and casualty information could be gathered in an effort to pred
 
 **Questions**
 
-In exploring the datasets created in the Data Wrangling step, I wanted to look into answering two main questions.
+In exploring the datasets created in the Data Wrangling step, I wanted to look into answering three main questions.
 1. I wanted to get a feel for the impacts that hurricanes have had over the years on the Gulf Coast of the United States.  This includes frequency, strength, and strength frequency for both the Gulf Coast as a whole and per state.
 2. Are there any factors of the ocean properties that trend well with the frequency of hurricanes?
 3. Take a look into the data broken down by state.
@@ -148,8 +164,11 @@ In exploring the datasets created in the Data Wrangling step, I wanted to look i
 
 **1. Hurricane Impacts**
 
-* A trend of 0-3 hurricanes per year is pretty steady throughout history with a few outlying years, most notably 2005 with 11 hurricane impacts along the gulf coast.  Zero hurricanes is the most seen amount throughout history. 90% of the years had 3 hurricanes or less with most years having 0 or 1 hurricanes per year.
+* A trend of 0-3 hurricanes per year is pretty steady throughout history with a few outlying years, most notably 2005 with 11 hurricane impacts along the gulf coast.  Zero hurricanes is the most seen amount throughout history. 90% of the years had 3 hurricanes or less with most years having 0 or 1 hurricanes per year.  These points are illustrated below in *Figure 9*, *Figure 10*, and *Figure 11*:
+
 <img width="608" alt="hurricanes per year over time" src="https://user-images.githubusercontent.com/23604099/38057950-1c57f62e-32af-11e8-97ae-19672a6378ae.PNG">
+
+*Figure 9: 
 <img width="553" alt="frequency of hurricane occurences per year" src="https://user-images.githubusercontent.com/23604099/38058000-4e885300-32af-11e8-8a53-886ecd1f10c0.PNG">
 <img width="561" alt="cdf hurricanes per year" src="https://user-images.githubusercontent.com/23604099/38058034-6e2fee0c-32af-11e8-81fa-ea6330a7d25f.PNG">
 
