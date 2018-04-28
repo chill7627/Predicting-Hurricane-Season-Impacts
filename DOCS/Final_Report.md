@@ -108,7 +108,7 @@ The Historical Hurricane Data lists the hurricanes per year,  their categories, 
 
 In order to wrangle the data into python, I had to scrape the wiki page's tables.  I used the [wikipedia package](https://pypi.python.org/pypi/wikipedia).  Below in *Figure 6* is an example of a dataframe straight from the wiki table:
 
-<img width="760" alt="sample raw wiki table" src="https://user-images.githubusercontent.com/23604099/36947617-b9c71e2e-1f9c-11e8-8c30-022f90e0aa77.PNG">
+<img width="700" alt="sample raw wiki table" src="https://user-images.githubusercontent.com/23604099/36947617-b9c71e2e-1f9c-11e8-8c30-022f90e0aa77.PNG">
 
 *Figure 6: Sample of the raw dataframes scraped from the wiki tables.* 
 
