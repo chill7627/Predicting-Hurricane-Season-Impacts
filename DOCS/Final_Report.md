@@ -80,7 +80,7 @@ After looking at the latitude and longitude data more closely, it was inconsiste
 
 Upon inspection, the data was mostly missing for the pH and pressure columns, so I chose to drop them from the dataframe.  Moreover, I filled NaN values by first filling NaNs by location averages.  Then, the remaining NaNs were filled by back filling.  Below in *Figure 2* is the head of the created dataframe.  After these wrangling steps I did some EDA into how many data points there were per location in the dataframe just created.  The summary graph of this information is shown in *Figure 3* below:
 
-<img width="388" alt="wod_loc_df_head" src="https://user-images.githubusercontent.com/23604099/39396940-1fffed6c-4ac5-11e8-90df-7e97b491adc7.PNG">
+<img width="700" alt="wod_loc_df_head" src="https://user-images.githubusercontent.com/23604099/39396940-1fffed6c-4ac5-11e8-90df-7e97b491adc7.PNG">
 
 *Figure2: Head of the resulting wrangled dataframe indexed by location and date.*
 
@@ -114,7 +114,7 @@ In order to wrangle the data into python, I had to scrape the wiki page's tables
 
 The tables from the wiki page have several issues that need to be cleaned up.  First I fixed the fact the tables were set up in a split table fashion.  I had to put the data into one long dataframe.  Also, the date was split into two columns.  I fixed this by using datetime.strptime() method, which parsed the dates in the separate columns.  In addition, I removed any blank rows that existed in the dataframes.  The result is below in *Figure 7*: 
 
-<img width="368" alt="post datetime and concat hurricane data" src="https://user-images.githubusercontent.com/23604099/36947997-ed6d0f36-1fa1-11e8-8568-52fe0d232b13.PNG">
+<img width="700" alt="post datetime and concat hurricane data" src="https://user-images.githubusercontent.com/23604099/36947997-ed6d0f36-1fa1-11e8-8568-52fe0d232b13.PNG">
 
 *Figure 7: Resulting dataframe after first wrangling steps outlined above.*
 
@@ -127,7 +127,7 @@ Next steps included:
 
 The result is below in *Figure 8*:
 
-<img width="283" alt="final hurricane df" src="https://user-images.githubusercontent.com/23604099/37010989-15f23f7e-20bc-11e8-8c18-3d3e6a8ec072.PNG">
+<img width="700" alt="final hurricane df" src="https://user-images.githubusercontent.com/23604099/37010989-15f23f7e-20bc-11e8-8c18-3d3e6a8ec072.PNG">
 
 *Figure 8: The final wrangled dataframe containing the historical list of hurricanes to impact the United States Gulf Coast.*
 
@@ -166,27 +166,41 @@ In exploring the datasets created in the Data Wrangling step, I wanted to look i
 
 * A trend of 0-3 hurricanes per year is pretty steady throughout history with a few outlying years, most notably 2005 with 11 hurricane impacts along the gulf coast.  Zero hurricanes is the most seen amount throughout history. 90% of the years had 3 hurricanes or less with most years having 0 or 1 hurricanes per year.  These points are illustrated below in *Figure 9*, *Figure 10*, and *Figure 11*:
 
-<img width="608" alt="hurricanes per year over time" src="https://user-images.githubusercontent.com/23604099/38057950-1c57f62e-32af-11e8-97ae-19672a6378ae.PNG">
+<img width="700" alt="hurricanes per year over time" src="https://user-images.githubusercontent.com/23604099/38057950-1c57f62e-32af-11e8-97ae-19672a6378ae.PNG">
 
-*Figure 9: 
-<img width="553" alt="frequency of hurricane occurences per year" src="https://user-images.githubusercontent.com/23604099/38058000-4e885300-32af-11e8-8a53-886ecd1f10c0.PNG">
-<img width="561" alt="cdf hurricanes per year" src="https://user-images.githubusercontent.com/23604099/38058034-6e2fee0c-32af-11e8-81fa-ea6330a7d25f.PNG">
+*Figure 9: Time series of the number of hurricanes per year that impacted the US gulf coast.*
 
-* After reviewing the category data, it shows that the most frequent category is Category 1 and the least frequent is Category 5. Moreover, the most frequent occurence is for the Gulf Coast to have 1 Category 1 hurricane per year.  Hurricanes are ranked in strength with the weakest being Category 1  and the strongest being Category 5.
-<img width="558" alt="frequency of categories per year" src="https://user-images.githubusercontent.com/23604099/38058464-ebd5b6b0-32b0-11e8-9bc4-da7db2552441.PNG">
-<img width="343" alt="frequency of category occurences per year" src="https://user-images.githubusercontent.com/23604099/38058656-a09557f4-32b1-11e8-8e9d-ee63d0f528cf.PNG">
+<img width="700" alt="frequency of hurricane occurences per year" src="https://user-images.githubusercontent.com/23604099/38058000-4e885300-32af-11e8-8a53-886ecd1f10c0.PNG">
+
+*Figure 10: Frequency of occurences of hurricanes per year.  The x axis is number of hurricanes per year.  The y axis is the amount of years since 1960 that had that number of hurricanes per year.*
+
+<img width="700" alt="cdf hurricanes per year" src="https://user-images.githubusercontent.com/23604099/38058034-6e2fee0c-32af-11e8-81fa-ea6330a7d25f.PNG">
+
+*Figure 11: Cummulative Distribution Function plot for the number of hurricanes per year.  The 90% mark is annotated.*
+
+* After reviewing the category data, it shows that the most frequent category is Category 1 and the least frequent is Category 5. Moreover, the most frequent occurence is for the Gulf Coast to have one Category 1 hurricane per year.  Hurricanes are ranked in strength with the weakest being Category 1  and the strongest being Category 5.  These points are illustrated in *Figure 12* and *Figure 13* below:
+
+<img width="700" alt="frequency of categories per year" src="https://user-images.githubusercontent.com/23604099/38058464-ebd5b6b0-32b0-11e8-9bc4-da7db2552441.PNG">
+
+*Figure 12: Category counts for all time since 1960.*
+
+<img width="700" alt="frequency of category occurences per year" src="https://user-images.githubusercontent.com/23604099/38058656-a09557f4-32b1-11e8-8e9d-ee63d0f528cf.PNG">
+
+*Figure 13: Category Occurence Frequencies.  The categories are separated into their own plots.  The x-axis is the number of occurences of that particular category per year.  The y-axis is the number of years that had those occurences per year.*
 
 **2. Ocean Properties and Hurricane Impacts Trends**
 
 I looked at the ocean data of the Gulf of Mexico averaged as a whole.  I investigated whether there are any correlations between the ocean properties and the number of hurricanes that impacted the gulf coast.  Also, I looked into the correlations between ocean features and average strengths of the storms.
 
-
 * A time series analysis of ocean features revealed that most of the features have remained relatively steady besides temperature. There have been upsets in all the factors. Most interesting was that the average temperature for the gulf was much lower the year of 2005, the year of 11 hurricane impacts.  Dips in the temperature can be observed for every significant peak in the number of hurricanes.  All the features have low correlations with the ocean data with temperature being the strongest.  Also, there is a fair amount of positive correlation between salinity and temperature, and silicates and oxygen. There seems to also be some negative correlation between silicates and temperature and salinity and oxygen, and phosphates and salinity.
 
-* Below are line plots of the features averaged over the entire Gulf of Mexico per year vs. the hurricanes per year.
-<img width="468" alt="ocean_params_time" src="https://user-images.githubusercontent.com/23604099/38146476-28fe6f66-341c-11e8-9f37-52a28a5c4e3d.png">
+* Below in *Figure 14* are line plots of the features averaged over the entire Gulf of Mexico per year vs. the hurricanes per year.
 
-* Next are Pearson correlation coefficients for each ocean feature and the number of hurricanes per year.
+<img width="700" alt="ocean_params_time" src="https://user-images.githubusercontent.com/23604099/38146476-28fe6f66-341c-11e8-9f37-52a28a5c4e3d.png">
+
+*Figure 14: Time series analyses of the WOD features shown in comparison to the number of hurricanes per year.
+
+* Next are Pearson correlation coefficients for each ocean feature and the number of hurricanes per year shown in *Table 2*.
 
 |Ocean Parameters|Correlations with Number of Hurricanes per Year|
 |----------------|-----------------------------------------------|
@@ -196,40 +210,63 @@ I looked at the ocean data of the Gulf of Mexico averaged as a whole.  I investi
 |Silicate|0.122182|
 |Temperature|-0.362684|
 
+*Table 2: WOD parameters and their correlations with the number of hurricanes per year.*
+
 **3. Data Analyzed by State**
 
 After looking at the gulf of Mexico as a whole, I thought it would be worthwhile to look into the breakdowns by state.
 
-* After review of cursory hurricanes by state data, Florida and Louisiana are impacted the most with Alabama and Mississippi impacted the least. Florida is impacted by higher strength storms compared to the rest of the states, which are mostly affected by category 1 storms.  Moreover, the highest likelihood is to be impacted by 0 or 1 storms per year.
-<img width="573" alt="hurricane state count" src="https://user-images.githubusercontent.com/23604099/38064628-fe578c8e-32cc-11e8-8443-92d3ea32feb5.PNG">
-<img width="433" alt="categories by state" src="https://user-images.githubusercontent.com/23604099/38064675-4c6a6612-32cd-11e8-93e2-710679244217.PNG">
-<img width="557" alt="hurricanes per year by state" src="https://user-images.githubusercontent.com/23604099/38144432-aed1b350-3412-11e8-99bb-3cd8ccfc20ed.PNG">
+* After review of cursory hurricanes by state data, Florida and Louisiana are impacted the most with Alabama and Mississippi impacted the least. Florida is impacted by higher strength storms compared to the rest of the states, which are mostly affected by category 1 storms.  Moreover, the highest likelihood is to be impacted by 0 or 1 storms per year.  These points are illustrated below in *Figure 15*, *Figure 16*, and *Figure 17*.
 
+<img width="700" alt="hurricane state count" src="https://user-images.githubusercontent.com/23604099/38064628-fe578c8e-32cc-11e8-8443-92d3ea32feb5.PNG">
 
-* Upon the above simple initial questions, the data was seeming to show that certain states were always being impacted more frequent and with stronger storms.  I decided to dig in deeper into different features of the states to see if they showed any interesting trends and or correlations.
+*Figure 15: Total hurricane count since 1960 for each state on the US gulf coast.*
 
-* After looking into hurricane counts vs. coast length for each state it seems that there is a positive correlation between the two quantities. This suggest that states with larger coast lines tend to be impacted more often than states with smaller coast lines. This may just be circumstantial to other factors such as sea temperature, sea floor depth, etc. along those coast lines.
-<img width="566" alt="coast length vs hurricanes" src="https://user-images.githubusercontent.com/23604099/38143248-a4f37fd0-340d-11e8-8012-79d02c56344e.PNG">
+<img width="700" alt="categories by state" src="https://user-images.githubusercontent.com/23604099/38064675-4c6a6612-32cd-11e8-93e2-710679244217.PNG">
 
-* The heatmaps of the parameters by year and the hurricane counts per year seems to visually show that there is some correlation between the wod data and the number of hurricanes per year. Mainly a negative correlation between temperature and the number of hurricanes per year.
+*Figure 16: Total number of category count since 1960 for each state on the US gulf coast.*
 
-<img width="463" alt="interact heatmap 2005 temp" src="https://user-images.githubusercontent.com/23604099/38428698-69ac7cba-398a-11e8-8276-a48254d6e34f.PNG">
-<img width="400" alt="interact bar plot temp 2005" src="https://user-images.githubusercontent.com/23604099/38428718-78b210b2-398a-11e8-9038-cfe114f686b7.PNG">
+<img width="700" alt="hurricanes per year by state" src="https://user-images.githubusercontent.com/23604099/38144432-aed1b350-3412-11e8-99bb-3cd8ccfc20ed.PNG">
 
-<img width="444" alt="interact heatmap 2007 temp" src="https://user-images.githubusercontent.com/23604099/38959214-c7ae02a0-432d-11e8-81d6-f152019af9ad.PNG">
-<img width="372" alt="interact bar plot temp 2007" src="https://user-images.githubusercontent.com/23604099/38959224-cce8b58a-432d-11e8-929e-db3e12327572.PNG">
+*Figure 17: Time series analysis of number hurricanes per year categorized by state.*
+
+* After answering the above simple initial questions, the data seemed to show that certain states were always being impacted more frequent and with stronger storms.  I decided to dig in deeper into different features of the states to see if they showed any interesting trends and or correlations.
+
+* After looking into hurricane counts vs. coast length for each state it seems that there is a positive correlation between the two quantities. This suggest that states with larger coast lines tend to be impacted more often than states with smaller coast lines.  This is illustrated in *Figure 18*.  This may just be circumstantial to other factors such as sea temperature, sea floor depth, etc. along those coast lines.
+
+<img width="700" alt="coast length vs hurricanes" src="https://user-images.githubusercontent.com/23604099/38143248-a4f37fd0-340d-11e8-8012-79d02c56344e.PNG">
+
+*Figure 18: Scatter plot of coast length vs. total number of hurricanes for each state.  Linear regression line fitted.*
+
+* Next heatmaps were created of the gulf of mexico and compared with the number of hurricanes broken down by category per year.  The heatmaps of the parameters by year and the hurricane counts per year seems to visually show that there is some correlation between the wod data and the number of hurricanes per year, mainly a negative correlation between temperature and the number of hurricanes per year.  These points are illustrated in *Figure 19*, *Figure 20*, *Figure 21*, and *Figure 22*.
+
+<img width="700" alt="interact heatmap 2005 temp" src="https://user-images.githubusercontent.com/23604099/38428698-69ac7cba-398a-11e8-8276-a48254d6e34f.PNG">
+
+*Figure 19: Heatmap of Gulf of Mexico temperature for the year 2005.  Blue represents colder temperatures and red represents warmer temperatures.* 
+
+<img width="700" alt="interact bar plot temp 2005" src="https://user-images.githubusercontent.com/23604099/38428718-78b210b2-398a-11e8-9038-cfe114f686b7.PNG">
+
+*Figure 20: Number of hurricanes separated by category for each state in the year 2005.*
+
+<img width="700" alt="interact heatmap 2007 temp" src="https://user-images.githubusercontent.com/23604099/38959214-c7ae02a0-432d-11e8-81d6-f152019af9ad.PNG">
+
+*Figure 21: Heatmap of Gulf of Mexico temperature for the year 2007.  Blue represents colder temperatures and red represents warmer temperatures.* 
+
+<img width="700" alt="interact bar plot temp 2007" src="https://user-images.githubusercontent.com/23604099/38959224-cce8b58a-432d-11e8-929e-db3e12327572.PNG">
+
+*Figure 22: Number of hurricanes separated by category for each state in the year 2007.*
 
 **Initial Data Exploration Summary**
 
-The number of hurricanes that affect the Gulf Coast of the United States each year is normally 3 or less.  The intensities of these storms are usually of the weakest variety being category 2 or less.  On a state by state basis, Florida and Louisiana get impacted the most often with Alabama and Mississippi being the least impacted.  There initially seems to be some correlation between the ocean parameters and the number of hurricanes that impact the gulf coast.  Most notably would be a negative correlation between the temperature and the number of hurricanes that impact the gulf coast.  The strongest correlation that initially explored is a strong positive correlation between the length of each states gulf coast, and the historical number of hurricanes that impacted the that state.  This makes sense if you think of it as a bucket catching rain drops.  A bigger bucket will stastically fill up faster. 
+The number of hurricanes that affect the Gulf Coast of the United States each year is normally 3 or less.  The intensities of these storms are usually of the weakest variety being category 2 or less.  On a state by state basis, Florida and Louisiana get impacted the most often with Alabama and Mississippi being the least impacted.  There initially seems to be some correlation between the ocean parameters and the number of hurricanes that impact the gulf coast.  Most notably would be a negative correlation between the temperature and the number of hurricanes that impact the gulf coast.  The strongest correlation that was initially explored is a strong positive correlation between the length of each states gulf coast and the historical number of hurricanes that impacted that state.  This makes sense if you think of it as a bucket catching rain drops.  A bigger bucket will stastically fill up faster. 
 
 ****
 
-### Statistical Testing Results
+## Statistical Testing Results
 
 After the initial exploratory data analysis, some correlations and relations among the data seemed visually evident.  Here are the statistical tests for those relations and correlations.
 
-#### Initial Hypotheses
+### Initial Hypotheses
 
 1. Correlation of number of hurricanes to any of the World Ocean Database features.
 2. Correlation of average yearly strength of hurricanes to any of the World Ocean Database features.
@@ -239,7 +276,7 @@ After the initial exploratory data analysis, some correlations and relations amo
 
 **Test Setup**
 
-I chose to use hacker statistics as they are more widely applicable and can benefit from numerous simulated samples.  With hacker statistics if you can think of test, hacker statistics can test it.  Below are the steps used in this test:
+I chose to use hacker statistics as they are more widely applicable and can benefit from numerous simulated samples.  With hacker statistics if you can think of a test, hacker statistics can test it.  Below are the steps used in this test:
 
    * Null hypothesis is that the data aren't correlated.
    * Create permutation replicates of the wod feature data while holding the hurricane data constant.
@@ -256,6 +293,8 @@ I chose to use hacker statistics as they are more widely applicable and can bene
 |Salinity|-0.215|0.075|No|
 |Silicate|0.122|0.156|No|
 |Temperature|-0.363|0.006|Yes|
+
+*Table 3: Results of the test for correlation between WOD ocean parameters and the number of hurricanes per year.*
 
 The only statistically significant correlation with $\alpha$ = .05 significance level is between temperature and the number of hurricanes.
 
@@ -281,6 +320,8 @@ I chose to use hacker statistics as they are more widely applicable and can bene
 |Silicate|0.133|0.174|No|
 |Temperature|-0.204|0.070|No|
 
+*Table 4: Results of the test for correlation between WOD ocean parameters and the average strength of hurricanes per year.*
+
 The only statistically significant correlation with alpha = .05 significance level is between oxygen and the average yearly strength.
 
 **3. Coast length correlates with overall number of hurricanes per state.**
@@ -301,11 +342,13 @@ I chose to use hacker statistics as they are more widely applicable and can bene
 |---------------------|-------|------------------|
 |0.940|0.009|Yes|
 
+*Table 5: Results of the test for correlation state coastline length and the number of hurricanes per year.*
+
 The result is statistically significant with alpha = .05 significance level.  Moreover, the fact that the empirical correlation is very high suggests that coast length has strong influence on the number of hurricanes that impact a particular state along th gulf coast.
 
-#### Additional Hypotheses
+### Additional Hypotheses
 
-* After reviewing the results of the previous test a couple more can be tested to solidify a statistical answer.
+* After reviewing the results of the previous test a couple more hypotheses can be tested to solidify a statistical answer.
 * Since temperature and the number of hurricanes were negatively correlated, and oxygen and average strength were negatively correlated:
     * A. Colder yearly average ocean temperatures lead to higher number of hurricanes.
     * B. Lower yearly average ocean oxygen content leads to higher average yearly strength of hurricanes.
@@ -336,7 +379,9 @@ I chose to use hacker statistics as they are more widely applicable and can bene
 |26 C|1.183|0.178|No|17|
 |27 C|0.894|0.279|No|8|
 
-The only result with significance is when the separation temperature is 21 C.  The data is skewed beyond divide temperatures of 25 and 26 because of one group having very little data points.  No statistical inferences can be made from the tests.  More data may help to give significant results.
+*Table 6: Results of the test that colder yearly average gulf temperatures lead to higher number of hurricanes per year.*
+
+The only result with significance is when the separation temperature is 21 C.  The data is skewed beyond divide temperatures of 25 and 26 because of one group having very few data points.  No statistical inferences can be made from the tests.  More data may help to give significant results.
 
 A t-test was run.  However the data may not exactly meet the conditions of the t-test, so the results must be taken with a grain of salt.  I would say more data points would aid in a more significant conclusion.  Here are the results of the t-test.
 
@@ -349,6 +394,8 @@ A t-test was run.  However the data may not exactly meet the conditions of the t
 |25 C|1.156|0.035|Yes|25|
 |26 C|1.183|0.009|Yes|17|
 |27 C|0.894|0.099|No|8|
+
+*Table 7: T-test results of the test that colder yearly average gulf temperatures lead to higher number of hurricanes per year.*
 
 After trying t-tests, the results are similar with significance at the extreme temperature range separations.  So, temperatures less than 21 and greater than 25 as the divding points give significant results (p-value < 0.05).  I would say more data is needed before making any conclusions.  The low and high data group respectively have very few data points.
 
@@ -378,6 +425,8 @@ I chose to use hacker statistics as they are more widely applicable and can bene
 |4.885|0.721|0.358|No|26|
 |5.385|0.762|0.309|No|13|
 
+*Table 8: Results of the test that lower yearly average gulf oxygen content leads to higher yearly strength average of hurricanes.*
+
 None of the oxygen level group tests are significant.  I believe this once again suffers from too few data points.
 
 A t-test was run.  However the data may not exactly meet the conditions of the t-test, so the results must be taken with a grain of salt.  I would say more data points would aid in a more significant conclusion.  Here are the results of the t-test.
@@ -388,13 +437,15 @@ A t-test was run.  However the data may not exactly meet the conditions of the t
 |4.885|0.721|0.031|Yes|26|
 |5.385|0.762|0.035|Yes|13|
 
+*Table 9: T-test results of the test that lower yearly average gulf oxygen content leads to higher yearly strength average of hurricanes.*
+
 The t-tests show significant results if the median of the oxygen content is used as the group divider suggesting that there might be a chance of more hurricanes if the oxygen content in the gulf is low.
 
 However the data may not exactly meet the conditions of the t-test, so the results must be taken with a grain of salt.  I would say more data points would aid in a more significant conclusion.
 
 However, a significant negative correlation does exist between the yearly average oxygen content of the gulf and the average strength of the hurricanes.
 
-#### Statistical Testing Summary
+### Statistical Testing Summary
 
 * There is a significant negative correlation between the yearly average gulf temperature and the yearly number of hurricanes affecting the gulf coast.
 
@@ -406,4 +457,55 @@ However, a significant negative correlation does exist between the yearly averag
 
 * More data is needed to provide a larger sample size and more statistical power.
 
+****
 
+## Machine Learning Model Performance
+
+After looking at the data in the previous steps, I decided to group the hurricane impacts per year into groups based on the number of hurricanes per year and the average category strength per year.
+
+There are two main predictions that will be made:
+1. The number of hurricanes severity for that year.
+2. The average strength severity for that year.
+
+**For lack of time I only did one prediction group (number of hurricanes for the year).  There is code written for two groups up until a point, then I notated where future work could be done.**
+
+### Categories for the groupings
+
+I chose to do groups intstead of linear regression techniques because I have strong suspicions that the model will always perform poorly if trying to predict the exact number of hurricanes per year or exact average strength per year.  Groups will allow for classification which I believe the model will have more success performing.  The impact is still similar in that we can still obtain quality information about the severity of the upcoming hurricane season.
+
+Moreover, the scoring criterion for the models will be the classification report which includes precision, recall, and f1 scores for each class and an average for the scores.  Emphasis will be put on the f1 score as this score is best indicative in this case for a better model as I don't want too many false positives, and I also don't want too many false negatives.
+
+1. Hurricanes per year:
+    * No Impacts (0)
+        * 0 hurricanes
+    * Moderate (1)
+        * 1-2 hurricanes
+    * Severe (2)
+        * 3+ hurricanes
+	
+2. Average strength per year:
+    * Mild (0)
+        * 0-1.5 average category ranking
+    * Moderate (1)
+        * 1.5-3 average category ranking
+    * Severe (2)
+        * 3-5 average category ranking
+        
+### Feature Engineering and Model Selection
+
+1. Features
+    * Since temperature was the only statistically significant trend, let's try just temperature as a feature first.
+    * Try adding in the rest of the wod features into the model next.
+        * The features will be averages for the time before the hurricane season (January 1st to May 31st) for that year.
+    * Try adding in previous years ocean data as features.
+        * The features will be averages for the time before the hurricane season (January 1st to May 31st) for the previous year.
+    * Try adding in previous years number of hurricanes and average strength as features.
+    
+2. Models
+    * Logistic Regression
+    * SVM Classification
+    * kNN
+
+The 3 models were chosen above as they are three of the most popular and robust classification algorithms in use to date.
+
+### 
