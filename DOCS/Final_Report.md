@@ -508,4 +508,96 @@ Moreover, the scoring criterion for the models will be the classification report
 
 The 3 models were chosen above as they are three of the most popular and robust classification algorithms in use to date.
 
-### 
+### Model Setup and Performance Results
+
+The 3 models were each tested with the different features outlined above.  This created three by four or 12 instances.  Each case was run 5 times and the distribution of f1 scores was analyzed to judge model performance.
+* The features were standardized before being implemented in the model.
+* Randomized search cross validation was done in order to tune the model hyper parameters.  
+	* Logistic Regression: C
+	* SVC: C and gamma
+	* kNN: k (Grid search cross validation)
+
+**1. Logistic Regression Performance Summary**
+
+The average f1 scores for the different features are outlined below in *Table 10*, and in the boxplots shown in *Figure 23* below.
+
+|Feature Set|f1 score|
+|-----------|--------|
+|Tempeature Only|0.45|
+|All WOD Features|0.46|
+|Above with last year's WOD features|0.29|
+|Above with last year's # of hurricanes and average strength|0.38|
+
+*Table 10: Logistic Regression performance results with different feature sets.*
+
+<img width="700" alt="logreg feature test comparison" src="https://user-images.githubusercontent.com/23604099/39397741-541adf5a-4ad2-11e8-9990-cec53cda7bda.PNG">
+
+*Figure 23: Boxplots of the f1 scores for testing different feature sets with Logistic Regression.*
+
+Logistic Regression performed equally best with temperature as the only feature and all the wod features as features.  Model performance is pretty low.  For logistic regression with the features available, I would choose to run with just temperature.
+    * More research into features need to be done in order to create a better model and/or more data is needed.
+    
+**2. Support Vector Machine Classification Performance Summary**
+
+The average f1 scores for the different features are outlined below in *Table 11*, and in the boxplots shown in *Figure 24* below.
+
+|Feature Set|f1 score|
+|-----------|--------|
+|Tempeature Only|0.34|
+|All WOD Features|0.42|
+|Above with last year's WOD features|0.39|
+|Above with last year's # of hurricanes and average strength|0.26|
+
+*Table 11: SVC performance results with different feature sets.*
+
+<img width="700" alt="svc feature test comparison" src="https://user-images.githubusercontent.com/23604099/39397831-90cbc954-4ad3-11e8-9e79-cfe521c2266e.PNG">
+
+*Figure 24: Boxplots of the f1 scores for testing different feature sets with SVC.*
+
+SVM classification performed best with all the wod features as features.  Model performance is pretty low.  For SVC with the features available, I would choose to run with all the wod features as features.
+* More research into features need to be done in order to create a better model and/or more data is needed.
+* Also, the model performed on average worse than logistic regression.
+
+**3. k Nearest Neighbors Performance Summary**
+
+The average f1 scores for the different features are outlined below in *Table 12*, and in the boxplots shown in *Figure 25* below.
+
+|Feature Set|f1 score|
+|-----------|--------|
+|Tempeature Only|0.55|
+|All WOD Features|0.36|
+|Above with last year's WOD features|0.43|
+|Above with last year's # of hurricanes and average strength|0.36|
+
+*Table 12: kNN performance results with different feature sets.*
+
+<img width="700" alt="knn feature test comparison" src="https://user-images.githubusercontent.com/23604099/39397964-5dfa47e2-4ad5-11e8-8438-e9d177a283bf.PNG">
+
+*Figure 25: Boxplots of the f1 scores for testing different feature sets with kNN.*
+
+kNN performed best with temperature as the only feature.  Model performance is pretty low.  For kNN with the features available, I would choose to run with temperature as the only feature.
+* More research into features need to be done in order to create a better model and/or more data is needed.
+* Also, the model performed on average worse than logistic regression except with temperature as the only feature where it on average outperformed Logistic Regression.
+* The model outperformed SVC on average.
+
+### Machine Learning Performance Summary
+
+* As of right now the best performing model is kNN with only temperature as the sole feature in the model.
+    * Average f1 score of 0.55.
+* There are too few data points and not enough statistically significant features to use in the models.
+* In order to improve the various models, more research into features needs to be done, and more data collected.
+    * However, the only way to collect more data is by waiting and recording.
+    * Other features could be global weather trends for the year such as off the coast of africas where hurricanes start or the north atlantic current, etc.
+    * Here are the features used by NOAA to predict hurricane activity but not landfall.
+        1. The conducive conditions which were predicted in May for the Atlantic hurricane Main Development Region (MDR, which includes the tropical Atlantic and Caribbean Sea) are now present and are expected to persist through the peak months (August-October, ASO) of the hurricane season. These conditions include weaker vertical wind shear, weaker trade winds, more conducive wind patterns coming off of Africa, and a stronger west African monsoon.
+
+        2. There is much higher confidence that ENSO-neutral conditions will persist through ASO, and that El Niño will not develop and suppress the season. 
+
+        3. Warmer sea surface temperatures (SSTs) in the MDR are more likely to persist than key models had previously predicted.
+
+        4. All models now predict a more active season than they did in May.
+
+        5. Enhanced June-July activity in the tropical Atlantic (tropical storms Bret and Don) reinforces the expectation for an above-normal season. Historically, years with early-season activity in this region have a higher likelihood of being above-normal.
+* Moreover, the activity (number of storms) in the atlantic system (includes Gulf of Mexico) tends to follow Poisson's Distribution quite well.
+
+#### This is where future analysis and modeling of category strength could be done.
