@@ -9,7 +9,7 @@
 
 ## OVERVIEW
 
-Every year the Gulf Coast is impacted by numerous tropical weather systems.  The deadliest and most damaging of these being hurricanes.  A single hurricane can cause damages of $50 billion plus and rack up a hefty death toll.  Currently, Gulf Coast states could use a simple way to assess or forecast potential impacts for the upcoming hurricane season.  Having a predictive model for hurricane season impacts as landfalls would aid states in allocating resources and budgeting for probable damages.
+Every year the Gulf Coast is impacted by numerous tropical weather systems.  The deadliest and most damaging of these being hurricanes.  A single hurricane can cause damages of $50 billion plus and rack up a hefty death toll.  Currently, Gulf Coast states could use a simple way to assess or forecast potential landfalls for upcoming hurricane seasons.  Having a predictive model for hurricane season impacts as landfalls would aid states in allocating resources and budgeting for probable damages.
 
 ****
 
