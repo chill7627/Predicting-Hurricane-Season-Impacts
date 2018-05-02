@@ -28,13 +28,13 @@ The federal, state, and local governments, especially those along the Gulf Coast
 * **Background Information and File Selection**
     
 The World Ocean Database (WOD) is a massive data collection and storage project supported by NOAA.  It houses copious amounts of  data from the world's oceans.  Data is stored in datasets based on the various instruments used to collect the data.  The data contains depth profile information about ocean properties such as: 
-      * Temperature
-      * Salinity
-      * pH
-      * Pressure
-      * Phosphates
-      * Silicates
-  		* And more that weren't used because of scarcity in the OSD data.
+* Temperature
+* Salinity
+* pH
+* Pressure
+* Phosphates
+* Silicates
+* And more that weren't used because of scarcity in the OSD data.
 			
 The methods of Data Acquisition employed to gather the data are outlined in the *Table 1* below:
 
