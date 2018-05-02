@@ -550,7 +550,7 @@ The average f1 scores and tuned hyperparameters for the different features are o
 
 *Table 11: SVC performance results with different feature sets.*
 
-<img width="700" alt="svc feature test comparison" src="https://user-images.githubusercontent.com/23604099/39397831-90cbc954-4ad3-11e8-9e79-cfe521c2266e.PNG">
+<img width="700" alt="svc feature test comparison" src="https://user-images.githubusercontent.com/23604099/39554368-5fa1868c-4e40-11e8-87f7-effc964b5a0c.PNG">
 
 *Figure 24: Boxplots of the f1 scores for testing different feature sets with SVC.*
 
