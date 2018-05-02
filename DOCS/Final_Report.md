@@ -519,7 +519,7 @@ The 3 models were each tested with the different features outlined above.  This 
 
 **1. Logistic Regression Performance Summary**
 
-The average f1 scores for the different features are outlined below in *Table 10*, and in the boxplots shown in *Figure 23* below.
+The average f1 scores and tuned hyperparameters for the different features are outlined below in *Table 10*, and in the boxplots shown in *Figure 23* below.
 
 |Feature Set|f1 score|
 |-----------|--------|
@@ -530,23 +530,23 @@ The average f1 scores for the different features are outlined below in *Table 10
 
 *Table 10: Logistic Regression performance results with different feature sets.*
 
-<img width="700" alt="logreg feature test comparison" src="https://user-images.githubusercontent.com/23604099/39397741-541adf5a-4ad2-11e8-9990-cec53cda7bda.PNG">
+<img width="700" alt="logreg feature test comparison" src="https://user-images.githubusercontent.com/23604099/39553905-d9dd15ea-4e3d-11e8-84e2-b5999479e074.PNG">
 
 *Figure 23: Boxplots of the f1 scores for testing different feature sets with Logistic Regression.*
 
-Logistic Regression performed equally best with temperature as the only feature and all the wod features as features.  Model performance is pretty low.  For logistic regression with the features available, I would choose to run with just temperature.
+Logistic Regression performed equally best on average with all the wod features as features by a slight margin.  Model performance is pretty low overall.  For logistic regression with the features available, I would choose to run with all the wod features.
     * More research into features need to be done in order to create a better model and/or more data is needed.
     
 **2. Support Vector Machine Classification Performance Summary**
 
-The average f1 scores for the different features are outlined below in *Table 11*, and in the boxplots shown in *Figure 24* below.
+The average f1 scores and tuned hyperparameters for the different features are outlined below in *Table 11*, and in the boxplots shown in *Figure 24* below.
 
 |Feature Set|f1 score|
 |-----------|--------|
-|Tempeature Only|0.34|
-|All WOD Features|0.42|
-|Above with last year's WOD features|0.39|
-|Above with last year's # of hurricanes and average strength|0.26|
+|Tempeature Only|f1 = 0.43<br>C = 26<br>gamma = 34|
+|All WOD Features|f1 = 0.18<br>C = 34<br>gamma = 6.6|
+|Above with last year's WOD features|f1 = 0.31<br>C = 44<br>gamma = 16|
+|Above with last year's # of hurricanes and average strength|f1 = 0.27<br>C = 40<br>gamma = 25|
 
 *Table 11: SVC performance results with different feature sets.*
 
