@@ -554,7 +554,7 @@ The average f1 scores and tuned hyperparameters for the different features are o
 
 *Figure 24: Boxplots of the f1 scores for testing different feature sets with SVC.*
 
-SVM classification performed best with all the wod features as features.  Model performance is pretty low.  For SVC with the features available, I would choose to run with all the wod features as features.
+SVM classification performed best with temperature as the sole feature.  Model performance is pretty low.  For SVC with the features available, I would choose to run with temperature as the only feature.
 * More research into features need to be done in order to create a better model and/or more data is needed.
 * Also, the model performed on average worse than logistic regression.
 
@@ -564,10 +564,10 @@ The average f1 scores for the different features are outlined below in *Table 12
 
 |Feature Set|f1 score|
 |-----------|--------|
-|Tempeature Only|0.55|
-|All WOD Features|0.36|
-|Above with last year's WOD features|0.43|
-|Above with last year's # of hurricanes and average strength|0.36|
+|Tempeature Only|f1 = <br>k = |
+|All WOD Features|f1 = <br>k = |
+|Above with last year's WOD features|f1 = <br>k = |
+|Above with last year's # of hurricanes and average strength|f1 = <br>k = |
 
 *Table 12: kNN performance results with different feature sets.*
 
