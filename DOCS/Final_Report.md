@@ -164,7 +164,7 @@ In exploring the datasets created in the Data Wrangling step, I wanted to look i
 
 **1. Hurricane Impacts**
 
-* A trend of 0-3 hurricanes per year is pretty steady throughout history with a few outlying years, most notably 2005 with 11 hurricane impacts along the gulf coast.  Zero hurricanes is the most seen amount throughout history. 90% of the years had 3 hurricanes or less with most years having 0 or 1 hurricanes per year.  These points are illustrated below in *Figure 9*, *Figure 10*, and *Figure 11*:
+* A trend of 0-3 hurricanes per year is pretty steady throughout history with a few outlying years, most notably 2005 with 11 hurricane impacts along the gulf coast.  Zero hurricanes is the most frequent occurence throughout history. 90% of the years had 3 hurricanes or less with most years having 0 or 1 hurricanes per year.  These points are illustrated below in *Figure 9*, *Figure 10*, and *Figure 11*:
 
 <img width="700" alt="hurricanes per year over time" src="https://user-images.githubusercontent.com/23604099/38057950-1c57f62e-32af-11e8-97ae-19672a6378ae.PNG">
 
