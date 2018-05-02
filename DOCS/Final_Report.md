@@ -523,10 +523,10 @@ The average f1 scores for the different features are outlined below in *Table 10
 
 |Feature Set|f1 score|
 |-----------|--------|
-|Tempeature Only|0.45|
-|All WOD Features|0.46|
-|Above with last year's WOD features|0.29|
-|Above with last year's # of hurricanes and average strength|0.38|
+|Tempeature Only|f1 = 0.43<br>C = 64234|
+|All WOD Features|f1 = 0.45<br>C = 38808|
+|Above with last year's WOD features|f1 = 0.37<br>C = 37875|
+|Above with last year's # of hurricanes and average strength|f1 = 0.35<br>C = 18273|
 
 *Table 10: Logistic Regression performance results with different feature sets.*
 
