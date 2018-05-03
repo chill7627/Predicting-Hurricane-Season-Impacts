@@ -600,4 +600,4 @@ kNN performed best with temperature as the only feature.  Model performance is m
         5. Enhanced June-July activity in the tropical Atlantic (tropical storms Bret and Don) reinforces the expectation for an above-normal season. Historically, years with early-season activity in this region have a higher likelihood of being above-normal.
 * Moreover, the activity (number of storms) in the atlantic system (includes Gulf of Mexico) tends to follow Poisson's Distribution quite well.
 
-#### This is where future work could be done with algorithms and modeling of category strength, etc.
+#### This is where future work could be done with alternative algorithms and modeling of category strength, etc.
