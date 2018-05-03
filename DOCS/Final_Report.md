@@ -519,23 +519,23 @@ The 3 models were each tested with the different features outlined above.  This 
 
 **1. Logistic Regression Performance Summary**
 
-The average f1 scores and tuned hyperparameters for the different features are outlined below in *Table 10*, and in the boxplots shown in *Figure 23* below.
+The f1 scores and tuned hyperparameters for the different features are outlined below in *Table 10*, and in the boxplots shown in *Figure 23* below.
 
 |Feature Set|f1 score|
 |-----------|--------|
-|Tempeature Only|f1 = 0.43<br>C = 64234|
-|All WOD Features|f1 = 0.45<br>C = 38808|
-|Above with last year's WOD features|f1 = 0.37<br>C = 37875|
-|Above with last year's # of hurricanes and average strength|f1 = 0.35<br>C = 18273|
+|Tempeature Only|f1 = 0.60<br>C = 373|
+|All WOD Features|f1 = 0.50<br>C = 0.001|
+|Above with last year's WOD features|f1 = 0.33<br>C = 0.001|
+|Above with last year's # of hurricanes and average strength|f1 = 0.47<br>C = 2.74|
 
 *Table 10: Logistic Regression performance results with different feature sets.*
 
-<img width="700" alt="logreg feature test comparison" src="https://user-images.githubusercontent.com/23604099/39553905-d9dd15ea-4e3d-11e8-84e2-b5999479e074.PNG">
+<img width="700" alt="logreg feature test comparison" src="https://user-images.githubusercontent.com/23604099/39597943-00b542d0-4ee5-11e8-9394-be565272a01e.PNG">
 
 *Figure 23: Boxplots of the f1 scores for testing different feature sets with Logistic Regression.*
 
-Logistic Regression performed equally best on average with all the wod features as features by a slight margin.  Model performance is pretty low overall.  For logistic regression with the features available, I would choose to run with all the wod features.
-    * More research into features need to be done in order to create a better model and/or more data is needed.
+Logistic Regression performed best with temperature as the only feature.  Model performance is pretty low overall.  For logistic regression with the features available, I would choose to run with temperature as the only feature.
+    * More research into features need to be done in order to create a better performing model and/or more data is needed.
     
 **2. Support Vector Machine Classification Performance Summary**
 
@@ -543,14 +543,14 @@ The average f1 scores and tuned hyperparameters for the different features are o
 
 |Feature Set|f1 score|
 |-----------|--------|
-|Tempeature Only|f1 = 0.43<br>C = 26<br>gamma = 34|
-|All WOD Features|f1 = 0.18<br>C = 34<br>gamma = 6.6|
-|Above with last year's WOD features|f1 = 0.31<br>C = 44<br>gamma = 16|
-|Above with last year's # of hurricanes and average strength|f1 = 0.27<br>C = 40<br>gamma = 25|
+|Tempeature Only|f1 = 0.66<br>C = 22425<br>gamma = 0.04|
+|All WOD Features|f1 = 0.60<br>C = 88<br>gamma = 0.008|
+|Above with last year's WOD features|f1 = 0.49<br>C = 243<br>gamma = 0.0004|
+|Above with last year's # of hurricanes and average strength|f1 = 0.27<br>C = 203<br>gamma = 0.00004|
 
 *Table 11: SVC performance results with different feature sets.*
 
-<img width="700" alt="svc feature test comparison" src="https://user-images.githubusercontent.com/23604099/39554368-5fa1868c-4e40-11e8-87f7-effc964b5a0c.PNG">
+<img width="700" alt="svc feature test comparison" src="https://user-images.githubusercontent.com/23604099/39599574-26f26e6e-4eea-11e8-8c00-001494a87e3c.PNG">
 
 *Figure 24: Boxplots of the f1 scores for testing different feature sets with SVC.*
 
@@ -564,26 +564,26 @@ The average f1 scores for the different features are outlined below in *Table 12
 
 |Feature Set|f1 score|
 |-----------|--------|
-|Tempeature Only|f1 = <br>k = |
-|All WOD Features|f1 = <br>k = |
-|Above with last year's WOD features|f1 = <br>k = |
-|Above with last year's # of hurricanes and average strength|f1 = <br>k = |
+|Tempeature Only|f1 = 0.71<br>k = 9|
+|All WOD Features|f1 = 0.60<br>k = 11|
+|Above with last year's WOD features|f1 = 0.38<br>k = 7|
+|Above with last year's # of hurricanes and average strength|f1 = 0.37<br>k = 13|
 
 *Table 12: kNN performance results with different feature sets.*
 
-<img width="700" alt="knn feature test comparison" src="https://user-images.githubusercontent.com/23604099/39397964-5dfa47e2-4ad5-11e8-8438-e9d177a283bf.PNG">
+<img width="700" alt="knn feature test comparison" src="https://user-images.githubusercontent.com/23604099/39600316-5f88f4ee-4eec-11e8-808d-691de6b0eaca.PNG">
 
 *Figure 25: Boxplots of the f1 scores for testing different feature sets with kNN.*
 
-kNN performed best with temperature as the only feature.  Model performance is pretty low.  For kNN with the features available, I would choose to run with temperature as the only feature.
+kNN performed best with temperature as the only feature.  Model performance is moderate.  For kNN with the features available, I would choose to run with temperature as the only feature.
 * More research into features need to be done in order to create a better model and/or more data is needed.
-* Also, the model performed on average worse than logistic regression except with temperature as the only feature where it on average outperformed Logistic Regression.
-* The model outperformed SVC on average.
+* Also, the model performed on average better than logistic regression and svm classification.
 
 ### Machine Learning Performance Summary
 
-* As of right now the best performing model is kNN with only temperature as the sole feature in the model.
-    * Average f1 score of 0.55.
+* As of right now the best performing model is kNN (k=9) with only temperature as the sole feature in the model.
+    * Average f1 score of 0.71 with a nice balance between precision and recall (0.8 and 0.75 respectively).
+    * The model has the best performance when it comes to not making too many false positives at the expense of making false negatives and vice versa in each of the three categorical classes.
 * There are too few data points and not enough statistically significant features to use in the models.
 * In order to improve the various models, more research into features needs to be done, and more data collected.
     * However, the only way to collect more data is by waiting and recording.
@@ -600,4 +600,4 @@ kNN performed best with temperature as the only feature.  Model performance is p
         5. Enhanced June-July activity in the tropical Atlantic (tropical storms Bret and Don) reinforces the expectation for an above-normal season. Historically, years with early-season activity in this region have a higher likelihood of being above-normal.
 * Moreover, the activity (number of storms) in the atlantic system (includes Gulf of Mexico) tends to follow Poisson's Distribution quite well.
 
-#### This is where future analysis and modeling of category strength could be done.
+#### This is where future work could be done with algorithms and modeling of category strength, etc.
